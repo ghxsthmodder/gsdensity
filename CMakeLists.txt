@@ -85,8 +85,18 @@ if(BUILD_TESTS)
         src/image_utils.cpp
     )
     
+    add_executable(test_roundtrip
+        tests/test_roundtrip.cpp
+        src/gdm_encoder.cpp
+        src/gdm_decoder.cpp
+        src/grle_encoder.cpp
+        src/grle_decoder.cpp
+        src/image_utils.cpp
+    )
+    
     add_test(NAME test_grle_decode COMMAND test_grle_decode)
     add_test(NAME test_grle_encode COMMAND test_grle_encode)
     add_test(NAME test_gdm_decode COMMAND test_gdm_decode)
     add_test(NAME test_gdm_encode COMMAND test_gdm_encode)
+    add_test(NAME test_roundtrip COMMAND test_roundtrip)
 endif()

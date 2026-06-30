@@ -149,4 +149,13 @@ void GRLEEncoder::encode_file(const std::string& input_png,
     ImageUtils::write_binary_file(output_grle, grle_data);
 }
 
+void GRLEEncoder::encode_file_from_image(const Image& image,
+                                         const std::string& output_grle) {
+    // Encode
+    std::vector<uint8_t> grle_data = encode(image);
+    
+    // Write output
+    ImageUtils::write_binary_file(output_grle, grle_data);
+}
+
 } // namespace gsdensity

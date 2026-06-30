@@ -25,6 +25,11 @@ public:
                            const std::string& output_gdm,
                            const EncodeOptions& options);
     
+    // Encode Image object directly to GDM file
+    static void encode_file_from_image(const Image& image,
+                                       const std::string& output_gdm,
+                                       const EncodeOptions& options);
+    
 private:
     // Create GDM header
     static std::vector<uint8_t> create_header(uint32_t dimension,

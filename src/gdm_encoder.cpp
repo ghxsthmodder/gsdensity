@@ -297,4 +297,14 @@ void GDMEncoder::encode_file(const std::string& input_png,
     ImageUtils::write_binary_file(output_gdm, gdm_data);
 }
 
+void GDMEncoder::encode_file_from_image(const Image& image,
+                                        const std::string& output_gdm,
+                                        const EncodeOptions& options) {
+    // Encode
+    std::vector<uint8_t> gdm_data = encode(image, options);
+    
+    // Write output
+    ImageUtils::write_binary_file(output_gdm, gdm_data);
+}
+
 } // namespace gsdensity
