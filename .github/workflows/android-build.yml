@@ -13,7 +13,7 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       
     - name: Set up Android NDK
       uses: nttld/setup-ndk@v1
@@ -53,7 +53,7 @@ jobs:
         tar -czf gsdensity-android-aarch64.tar.gz gsdensity
         
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: gsdensity-android-aarch64
         path: build-android/gsdensity-android-aarch64.tar.gz
