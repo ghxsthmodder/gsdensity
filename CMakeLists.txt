@@ -48,7 +48,7 @@ else()
 endif()
 
 # Link libraries
-if(UNIX AND NOT APPLE)
+if(UNIX AND NOT APPLE AND NOT ANDROID)
     target_link_libraries(gsdensity PRIVATE pthread)
 endif()
 
